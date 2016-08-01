@@ -20,7 +20,7 @@ app.post('/hello', function(req, res, next){
     text:'Hello ' + userName + '. Welcome to Hoang Dev Team'
 
   };
-  res.send('Got a POST request');
+  // res.send('Got a POST request');
 
   if(userName !== 'slackbot'){
     return res.status(200).json(botPayload);
