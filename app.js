@@ -31,7 +31,7 @@ app.post('/hello', function(req, res, next){
 });
 
 app.post('/def', function(req, res, next){
-  var word = req.body.trigger;
+  var word = req.body.text;
 
   var payload = {
     text:' means Hahah'
