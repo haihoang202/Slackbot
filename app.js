@@ -32,7 +32,8 @@ app.post('/hello', function(req, res, next){
 
 app.post('/def', function(req, res, next){
   var word = req.body.text;
-
+  var userName = req.body.user_name;
+  
   var payload = {
     text:' means Hahah'
   };
