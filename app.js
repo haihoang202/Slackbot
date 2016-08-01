@@ -34,7 +34,7 @@ app.post('/def', function(req, res, next){
   var word = req.body.trigger;
 
   var payload = {
-    text:word+' means Hahah'
+    text:' means Hahah'
   };
   if(userName !== 'slackbot'){
     return res.status(200).json(payload);
