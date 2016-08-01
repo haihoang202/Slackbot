@@ -29,3 +29,17 @@ app.post('/hello', function(req, res, next){
     return res.status(200).end();
   }
 });
+
+app.post('/def', function(req, res, next){
+  var word = req.body.trigger;
+
+  var payload = {
+    text:word+' means Hahah'
+  };
+  if(userName !== 'slackbot'){
+    return res.status(200).json(payload);
+  }
+  else {
+    return res.status(200).end();
+  }
+});
