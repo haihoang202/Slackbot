@@ -15,7 +15,7 @@ controller.hears(["hey","^pattern$"],["direct_message","direct_mention","mention
   // all of the fields available in a normal Slack message object are available
   // https://api.slack.com/events/message
   bot.reply(message, {
-    text:"A more complex response",
+    text:"A more complex response from Reply",
     username: "ReplyBot",
     icon_emoji: ":ghost:"
   });
