@@ -13,9 +13,9 @@ app.get('/', function(req, res) {
   unirest.get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=watch")
         .header("X-Mashape-Key", "2f5jJRAZVsmshu3LtG1ho3JoOEL9p1cKCrfjsna4vtPBumLj5p")
         .header("Accept", "text/plain")
-        .end(function (result) {
+        .end(function (response) {
           console.log(result.status, result.headers, result.body);
-          re = result;
+          re = response;
           });
     res.status(200).send(re);
 });
