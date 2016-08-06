@@ -8,8 +8,8 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function(req, res) {
-  res.status(200).send('Hello World!');
-  var re = "";
+  // res.status(200).send('Hello World!');
+  var re =
   unirest.get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=watch")
         .header("X-Mashape-Key", "2f5jJRAZVsmshu3LtG1ho3JoOEL9p1cKCrfjsna4vtPBumLj5p")
         .header("Accept", "text/plain")
