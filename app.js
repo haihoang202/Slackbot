@@ -14,8 +14,8 @@ app.get('/', function(req, res) {
         .header("X-Mashape-Key", "2f5jJRAZVsmshu3LtG1ho3JoOEL9p1cKCrfjsna4vtPBumLj5p")
         .header("Accept", "text/plain")
         .end(function (response) {
-          console.log(result.status, result.headers, result.body);
-          re = response.headers;
+          // console.log(result.status, result.headers, result.body);
+          re = response;
           });
     res.status(200).send(re);
 });
