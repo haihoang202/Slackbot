@@ -10,8 +10,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function(req, res) {
   // res.status(200).send('Hello World!');
-  var urban = require('urban'),trollface = urban('trollface');
-  var re='example';
+  var urban = require('urban');
+  trollface = urban('trollface');
+  var re='';
   console.log(re);
   trollface.first(function(json){
     console.log(json);
