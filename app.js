@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var unirest = require('unirest');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -33,9 +34,17 @@ app.post('/hello', function(req, res, next){
 app.post('/def', function(req, res, next){
   var word = req.body.text;
   var userName = req.body.user_name;
+  var re = "";
+  unirest.get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=watch")
+.header("X-Mashape-Key", "2f5jJRAZVsmshu3LtG1ho3JoOEL9p1cKCrfjsna4vtPBumLj5p")
+.header("Accept", "text/plain")
+.end(function (result) {
+  console.log(result.status, result.headers, result.body);
+  re = result.body;
+});
 
   var payload = {
-    text: word
+    text: re
   };
   if(userName !== 'slackbot'){
     return res.status(200).json(payload);
