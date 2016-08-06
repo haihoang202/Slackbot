@@ -35,7 +35,7 @@ app.post('/def', function(req, res, next){
   var userName = req.body.user_name;
 
   var payload = {
-    text: '*means Hahah*123'
+    text: word . '*means Hahah*'
   };
   if(userName !== 'slackbot'){
     return res.status(200).json(payload);
