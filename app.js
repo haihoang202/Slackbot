@@ -11,14 +11,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', function(req, res) {
   // res.status(200).send('Hello World!');
   var urban = require('urban');
-  trollface = urban('trollface');
-  var re='';
-  console.log(re);
-  trollface.first(function(json){
+  var re = "";
+  urban.random().first(function(json){
     console.log(json);
     re = json;
   });
-    res.status(200).send(re);
+  res.status(200).send(re);
 });
 
 app.listen(port, function(){
