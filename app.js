@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var unirest = require('unirest');
+// var urban = require('urban');
 
 var app = express();
 var port = process.env.PORT || 5000;
@@ -9,14 +10,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function(req, res) {
   // res.status(200).send('Hello World!');
-  var re =
-  unirest.get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=watch")
-        .header("X-Mashape-Key", "2f5jJRAZVsmshu3LtG1ho3JoOEL9p1cKCrfjsna4vtPBumLj5p")
-        .header("Accept", "text/plain")
-        .end(function (response) {
-          console.log(response.status, response.headers, response.body);
-          re = response;
-          });
+  var urban = require('urban'),trollface = urban('trollface');
+
+  trollface.first(function(json){
+    console.log(json);
+  });
     // res.status(200).send(re);
 });
 
