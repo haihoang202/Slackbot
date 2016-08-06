@@ -14,10 +14,10 @@ app.get('/', function(req, res) {
         .header("X-Mashape-Key", "2f5jJRAZVsmshu3LtG1ho3JoOEL9p1cKCrfjsna4vtPBumLj5p")
         .header("Accept", "text/plain")
         .end(function (response) {
-          // console.log(result.status, result.headers, result.body);
+          console.log(response.status, response.headers, response.body);
           re = response;
           });
-    res.status(200).send(re);
+    // res.status(200).send(re);
 });
 
 app.listen(port, function(){
