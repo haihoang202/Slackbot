@@ -16,6 +16,8 @@ app.get('/', function(req, res) {
         .end(function (result) {
           console.log(result.status, result.headers, result.body);
           re = result.body;
+          re .= result.headers;
+          re .= result.status;
         });
     res.status(200).send(re);
 });
