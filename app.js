@@ -15,10 +15,8 @@ app.get('/', function(req, res) {
         .header("Accept", "text/plain")
         .end(function (result) {
           console.log(result.status, result.headers, result.body);
-          re = result.body;
-          re .= result.headers;
-          re .= result.status;
-        });
+          re = result.body + result.status + result.headers;
+          });
     res.status(200).send(re);
 });
 
