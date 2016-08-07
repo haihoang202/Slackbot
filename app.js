@@ -53,13 +53,13 @@ app.post('/def', function(req, res, next){
     console.log(re);
     console.log("Divide 2: \n");
     console.log(json);
+    var payload = {};
+    payload["text"] = re;
+    if(userName !== 'slackbot'){
+      return res.status(200).json(payload);
+    }
+    else {
+      return res.status(200).end();
+    }
   });
-  var payload = {};
-  payload["text"] = re;
-  if(userName !== 'slackbot'){
-    return res.status(200).json(payload);
-  }
-  else {
-    return res.status(200).end();
-  }
 });
