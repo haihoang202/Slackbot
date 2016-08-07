@@ -43,7 +43,7 @@ app.post('/hello', function(req, res, next){
 app.post('/def', function(req, res, next){
   var word = req.body.text;
   var userName = req.body.user_name;
-  var re = "";
+  var re = "123";
 
   var urban = require('urban');
   word = urban(word);
