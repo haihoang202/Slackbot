@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
   var re = "";
   urban.random().first(function(json){
     console.log(json);
-    re = json.definition;
+    re = json;
   });
   res.status(200).send(re);
 });
