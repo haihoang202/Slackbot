@@ -11,10 +11,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', function(req, res) {
   // res.status(200).send('Hello World!');
   var urban = require('urban');
-  var re = "";
+  var re = "Yo 123";
   urban.random().first(function(json){
     console.log(json);
-    re = json;
+    re = json->definition;
   });
   res.status(200).send(re);
 });
