@@ -52,7 +52,7 @@ app.post('/def', function(req, res, next){
 });
 
   var payload = {
-    text: re
+    text: "Get it"
   };
   if(userName !== 'slackbot'){
     return res.status(200).json(payload);
