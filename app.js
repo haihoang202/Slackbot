@@ -46,9 +46,9 @@ app.post('/def', function(req, res, next){
   var re = "123";
 
   var urban = require('urban');
-  word = urban(word);
-  word.first(function(json){
-    re = json.definition;
+  word1 = urban(word);
+  word1.first(function(json){
+    re = word + " means: " + json.definition;
     console.log("Divide 1: \n");
     console.log(re);
     console.log("Divide 2: \n");
