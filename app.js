@@ -54,6 +54,7 @@ app.post('/def', function(req, res, next){
     console.log("Divide 2: \n");
     console.log(json);
     var payload = {};
+    payload["response_type"] = "in_channel";
     payload["text"] = re;
     if(userName !== 'slackbot'){
       return res.status(200).json(payload);
