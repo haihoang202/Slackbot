@@ -14,9 +14,10 @@ app.get('/', function(req, res) {
   var re = "Yo 123";
   urban.random().first(function(json){
     console.log(json);
-    re = json->definition;
+    // re = json->definition;
+    res.status(200).send(json);
   });
-  res.status(200).send(re);
+
 });
 
 app.listen(port, function(){
