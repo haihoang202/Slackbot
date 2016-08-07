@@ -49,6 +49,8 @@ app.post('/def', function(req, res, next){
   word = urban(word);
   word.first(function(json){
     re = json.definition;
+    console.log(re);
+    console.log(json);
   });
   var payload = {
     text: re
