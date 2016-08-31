@@ -55,6 +55,7 @@ app.post('/def', function(req, res, next){
     console.log("Divide 2: \n");
     console.log(json);
     var payload = {};
+    console.log(word_array[1]);
     if(word_array[1]=="-m"){
       payload["response_type"] = "";
     }
