@@ -54,7 +54,7 @@ app.post('/def', function(req, res, next){
     // console.log(re);
     // console.log("Divide 2: \n");
     // console.log(json);
-    // var payload = {};
+    var payload = {};
     console.log(word_array[0]);
     if(word_array[0].trim() === "-m"){
       payload["response_type"] = "ephemeral";
