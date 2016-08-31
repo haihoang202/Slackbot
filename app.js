@@ -57,7 +57,7 @@ app.post('/def', function(req, res, next){
     var payload = {};
     console.log(word_array[1]);
     if(word_array[1]=="-m"){
-      payload["response_type"] = "";
+      payload["response_type"] = "ephemeral";
     }
     else {
       payload["response_type"] = "in_channel";
