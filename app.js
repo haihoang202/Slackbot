@@ -44,6 +44,7 @@ app.post('/def', function(req, res, next){
   var word = req.body.text;
   var userName = req.body.user_name;
   var re = "123";
+  word_array = word.split();
 
   var urban = require('urban');
   word1 = urban(word);
@@ -54,7 +55,13 @@ app.post('/def', function(req, res, next){
     console.log("Divide 2: \n");
     console.log(json);
     var payload = {};
-    payload["response_type"] = "in_channel";
+    if(word_array[1]=="-m"){
+      payload["response_type"] = "";
+    }
+    else {
+      payload["response_type"] = "in_channel";
+    }
+
     payload["text"] = re;
     if(userName !== 'slackbot'){
       return res.status(200).json(payload);
