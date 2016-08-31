@@ -66,29 +66,31 @@ app.post('/def', function(req, res, next){
   var urban = require('urban');
   word1 = urban(word);
   word1.first(function(json){
-    re = word + " means: " + json.definition;
-    // if(typeof json.definition == 'undefined'){
-    //
-    // }
-    // console.log("Divide 1: \n");
-    // console.log(re);
-    // console.log("Divide 2: \n");
-    // console.log(json);
-    var payload = {};
+    if(typeof json == 'undefined'){
+      var payload = {};
 
-    payload["response_type"] = response_type;
-    payload["text"] = re;
-    payload["error"]={};
-    payload["error"]["code"]=2;
-    payload["error"]["msg"]="Temporarily ungathered :/";
+      payload["response_type"] = response_type;
+      payload["text"] = "Temporarily ungathered :/";
 
-    console.log(payload);
+    }
+    else{
+      re = word + " means: " + json.definition;
+      var payload = {};
 
+      payload["response_type"] = response_type;
+      payload["text"] = re;
+      payload["error"]={};
+      payload["error"]["code"]=2;
+      payload["error"]["msg"]="Temporarily ungathered :/";
+
+      console.log(payload);  
+    }
     if(userName !== 'slackbot'){
       return res.status(200).json(payload);
     }
     else {
       return res.status(200).end();
     }
+
   });
 });
