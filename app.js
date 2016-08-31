@@ -44,10 +44,17 @@ app.post('/def', function(req, res, next){
   var word = req.body.text;
   var userName = req.body.user_name;
   var re = "123";
-  word_array = word.split();
+  var response_type = "";
 
-  console.log(word_array[1]);
-  console.log(word_array[0]);
+  if(word.includes("-m")){
+    response_type = "ephemeral";
+  }
+  else {
+    response_type = "in_channel";
+  }
+
+  word = word.replace("-m","");
+  word = word.trim();
   // if(word_array[0].trim() == "-m"){
   //   payload["response_type"] = "ephemeral";
   //   word = word.replace("-m","");
@@ -65,8 +72,8 @@ app.post('/def', function(req, res, next){
     // console.log("Divide 2: \n");
     // console.log(json);
     var payload = {};
-    
-    payload["response_type"] = "in_channel";
+
+    payload["response_type"] = response_type;
     payload["text"] = re;
     if(userName !== 'slackbot'){
       return res.status(200).json(payload);
