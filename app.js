@@ -46,6 +46,16 @@ app.post('/def', function(req, res, next){
   var re = "123";
   word_array = word.split();
 
+  var payload = {};
+  console.log(word_array[0]);
+  if(word_array[0].trim() == "-m"){
+    payload["response_type"] = "ephemeral";
+    word = word.replace("-m","");
+  }
+  else {
+    payload["response_type"] = "in_channel";
+  }
+
   var urban = require('urban');
   word1 = urban(word);
   word1.first(function(json){
@@ -54,14 +64,7 @@ app.post('/def', function(req, res, next){
     // console.log(re);
     // console.log("Divide 2: \n");
     // console.log(json);
-    var payload = {};
-    console.log(word_array[0]);
-    if(word_array[0].trim() === "-m"){
-      payload["response_type"] = "ephemeral";
-    }
-    else {
-      payload["response_type"] = "in_channel";
-    }
+
 
     payload["text"] = re;
     if(userName !== 'slackbot'){
