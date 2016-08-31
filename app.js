@@ -70,7 +70,7 @@ app.post('/def', function(req, res, next){
       var payload = {};
 
       payload["response_type"] = response_type;
-      payload["text"] = "Temporarily ungathered :/";
+      payload["text"] = "Temporarily ungathered word :/";
 
     }
     else{
@@ -83,7 +83,7 @@ app.post('/def', function(req, res, next){
       payload["error"]["code"]=2;
       payload["error"]["msg"]="Temporarily ungathered :/";
 
-      console.log(payload);  
+      console.log(payload);
     }
     if(userName !== 'slackbot'){
       return res.status(200).json(payload);
