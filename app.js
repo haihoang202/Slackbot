@@ -1,8 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var unirest = require('unirest');
+
+var https = require('https');
 // var urban = require('urban');
 
+var options = {
+  host: 'slack.com',
+  port: 443,
+  path: '/api/',
+  headers: {
+    'Content-Type':'application/json'
+  }
+};
 var app = express();
 var port = process.env.PORT || 5000;
 
